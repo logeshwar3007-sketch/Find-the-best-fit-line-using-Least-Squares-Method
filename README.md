@@ -34,31 +34,32 @@ import matplotlib.pyplot as plt
 x = np.array([1, 2, 3, 4, 5])     # Input feature
 y = np.array([2, 4, 5, 4, 5])     # Target values
 
-# Number of observations
-n = len(x)
+x_mean = np.mean(x)
+y_mean = np.mean(y)
 
-# Calculate slope (m) and intercept (c)
-m = (n * np.sum(x * y) - np.sum(x) * np.sum(y)) / (n * np.sum(x ** 2) - (np.sum(x)) ** 2)
-c = (np.sum(y) - m * np.sum(x)) / n
+num = 0
+denom = 0
+for i in range(len(x)):
+    num += (x[i] - x_mean) * (y[i] - y_mean)
+    denom += (x[i] - x_mean)**2
 
-print(f"Slope (m): {m}")
-print(f"Intercept (c): {c}")
+m = num / denom
+b = y_mean - m * x_mean
 
 # Predict y values
-y_pred = m * x + c
+y_predicted = m * x + b
+print(y_predicted)
 
-# Plot the data points and regression line
-plt.scatter(x, y, color='blue', label='Actual data')
-plt.plot(x, y_pred, color='red', label='Fitted line')
-plt.xlabel('X')
-plt.ylabel('Y')
-plt.title('Univariate Linear Regression using Least Squares')
-plt.legend()
+print(m, b))
+
+plt.scatter(x, y)                # Plot the actual data points
+plt.plot(x, y_predicted, color='red')  # Plot the regression line
 plt.show()
 ```
 
 ## Output:
-<img width="735" height="669" alt="Screenshot 2026-02-09 102218" src="https://github.com/user-attachments/assets/9e3716c5-9aa5-4b32-98d5-ecbb2a431fc2" />
+<Figure size 640x480 with 1 Axes><img width="547" height="413" alt="image" src="https://github.com/user-attachments/assets/a34c9a93-d8fb-47ae-a4d1-22da435d4487" />
+
 
 
 
