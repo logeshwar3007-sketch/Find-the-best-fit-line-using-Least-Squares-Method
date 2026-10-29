@@ -1,6 +1,6 @@
-# EX 01-Implementation of Univariate Linear Regression
+# EX 01-Implementation of Univariate Linear Regression to fit a straight line using least squares.
 ## AIM:
-To implement univariate Linear Regression to fit a straight line using least squares.
+To write a  univariate Linear Regression to fit a straight line using least squares
 
 ## Equipments Required:
 1. Hardware – PCs
